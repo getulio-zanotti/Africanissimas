@@ -1,0 +1,134 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+@font-face {
+    font-family: 'BlackCoffee'; 
+    src: url('../fonts/Black-coffee.woff2') format('woff2');
+    font-display: swap;
+}
+:root {
+    /* --- 1. CORES E IDENTIDADE (Brand) --- */
+    --brand-brown:  rgb(107, 54, 21);
+    --brand-yellow: rgb(196, 124, 42);
+    --brand-red:    rgb(153, 31, 35);
+    --brand-green:  rgb(0, 120, 62);
+    --brand-blue:   rgb(42, 51, 115);
+    --title-font: 'BlackCoffee', cursive, serif;
+    --main-font:  'Montserrat', system-ui, -apple-system, sans-serif; 
+    color-scheme: light dark;
+    --bg-page:    #ffffff;
+    --bg-surface: #f8f9fa;
+    --text-main:  #121212;
+    --border:     #e1e4e8;
+    --current-h1: var(--brand-brown);
+    --current-h2: var(--brand-yellow);
+    --current-h3: var(--brand-red);
+    /* --- 2. ESCALA DE ESPAÇAMENTO (Base 8px) --- */
+    --space-4:  0.25rem;
+    --space-8:  0.5rem;
+    --space-12: 0.75rem;
+    --space-16: 1rem;    /* Mobile Standard */
+    --space-24: 1.5rem;  /* Desktop/Tablet Landscape */
+    --space-32: 2rem;
+    --space-48: 3rem;
+    --space-64: 4rem;
+    /* --- 3. BREAKPOINTS & LAYOUT --- */
+    --container-max: 1440px;
+    --app-margin: var(--space-16);
+    --app-gutter: var(--space-16);
+    /* --- 4. TIPOGRAFIA (WCAG AAA Compliance) --- */
+    --lh-body: 1.6;      /* Mandatório p/ AAA */
+    --lh-heading: 1.2;
+    --para-spacing: 2em; /* 2x font-size p/ AAA */
+    /* Escala Fluida (iPhone SE -> 4K) */
+    --fs-body:  clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --fs-h1:    clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+    --fs-h2:    clamp(1.75rem, 1.5rem + 1.25vw, 2.25rem);
+    --fs-h3:    clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    /* --- 5. INTERAÇÃO E UX --- */
+    --touch-target: 48px;
+    --radius-md: 8px;
+    --focus-ring: 3px solid var(--brand-red);
+}
+/* Alteração para Tablets Landscape e Desktops */
+@media (min-width: 905px) {
+    :root {
+        --app-margin: var(--space-24);
+        --app-gutter: var(--space-24);
+    }
+}
+@media (max-width: 320px) {
+    :root {
+        --app-margin: var(--space-12);
+    }
+}
+@media (min-width: 2560px) {
+    :root {
+        --container-max: 1800px;
+    }
+}
+/* Dark Mode Override */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-page:    #1a1a1a;
+        --bg-surface: #2a2a2a;
+        --text-main:  #f5f5f5;
+        --border:     #2c2c2c;
+    }
+}
+/* ================== 2. RESET E REGRAS GLOBAIS =================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: var(--main-font);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    letter-spacing: 1.1px;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word;
+}
+/* ================= 3. TIPOGRAFIA ESTRUTURADA ==================== */
+h1, h2, h3 {
+    font-family: var(--title-font);
+    line-height: var(--lh-heading);
+    margin-bottom: var(--space-16);
+    letter-spacing: 1.6px;
+}
+h1 { font-size: var(--fs-h1); color: var(--current-h1); }
+h2 { font-size: var(--fs-h2); color: var(--current-h2); }
+h3 { font-size: var(--fs-h3); color: var(--current-h3); }
+p {
+    margin-bottom: var(--para-spacing);
+    max-width: 75ch; /* UX: Limite de leitura confortável */
+    text-wrap: pretty;
+}
+/* ================= 4. ACESSIBILIDADE E INTERAÇÕES ================ */
+a, button {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--current-h2);
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target);
+    min-width: var(--touch-target);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+a:hover, button:hover { transform: scale(1.02); }
+a:active, button:active { transform: scale(0.98); }
+a:hover { text-decoration: underline; font-weight: 600; }
+:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
+}
+::selection {
+    background-color: var(--brand-brown);
+    color: #ffffff;
+}
