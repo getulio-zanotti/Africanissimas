@@ -18,9 +18,9 @@
     --bg-surface: #f8f9fa;
     --text-main:  #121212;
     --border:     #e1e4e8;
-    --current-h1: var(--brand-brown);
-    --current-h2: var(--brand-yellow);
-    --current-h3: var(--brand-red);
+    --current-title: var(--brand-yellow);
+    --scroll: var(--current-title, var(--brand-brown));
+
     /* --- 2. ESCALA DE ESPAÇAMENTO (Base 8px) --- */
     --space-4:  0.25rem;
     --space-8:  0.5rem;
@@ -82,6 +82,8 @@
 }
 html {
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll) var(--bg-page);
 }
 body {
     font-family: var(--main-font);
@@ -101,9 +103,9 @@ h1, h2, h3 {
     margin-bottom: var(--space-16);
     letter-spacing: 1.6px;
 }
-h1 { font-size: var(--fs-h1); color: var(--current-h1); }
-h2 { font-size: var(--fs-h2); color: var(--current-h2); }
-h3 { font-size: var(--fs-h3); color: var(--current-h3); }
+h1 { font-size: var(--fs-h1); color: var(--brand-brown); }
+h2 { font-size: var(--fs-h2); color: var(--current-title); }
+h3 { font-size: var(--fs-h3); color: var(--current-title); }
 p {
     margin-bottom: var(--para-spacing);
     max-width: 75ch; /* UX: Limite de leitura confortável */
@@ -113,7 +115,7 @@ p {
 a, button {
     cursor: pointer;
     text-decoration: none;
-    color: var(--current-h2);
+    color: var(--current-title);
     display: inline-flex;
     align-items: center;
     min-height: var(--touch-target);
