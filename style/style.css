@@ -20,7 +20,6 @@
     --border:     #e1e4e8;
     --current-title: var(--brand-yellow);
     --scroll: var(--current-title, var(--brand-brown));
-
     /* --- 2. ESCALA DE ESPAÇAMENTO (Base 8px) --- */
     --space-4:  0.25rem;
     --space-8:  0.5rem;
@@ -133,4 +132,109 @@ a:hover { text-decoration: underline; font-weight: 600; }
 ::selection {
     background-color: var(--brand-brown);
     color: #ffffff;
+}
+/*=========================== Elementos fixos================================ */
+:root {
+  --h: 64px;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--h);
+  background: var(--bg-page);
+  color: var(--text-main);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.header__logo {
+  font-family: var(--title-font);
+  text-decoration: none;
+  color: var(--brand-brown);
+  font-size: var(--fs-h2);
+}
+.header__toggle {
+  background: none;
+  border: none;
+  fill: var(--brand-brown);
+  cursor: pointer;
+  padding: 8px;
+}
+/* Mobile Menu - Hidden by default */
+.header__menu {
+  display: flex; /* Mudamos de none para flex fixo */
+  list-style: none;
+  position: absolute;
+  top: var(--h);
+  left: 0;
+  width: 100%;
+  background: var(--bg-page);
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: 
+    opacity .25s ease-in-out,
+    transform .25s ease-in-out,
+    visibility .25s;
+}
+/* Estado Ativo (Onde a mágica acontece) */
+.header__menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0)
+}
+.header__link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  padding: 12px;
+  display: block;
+  border-radius: 8px;
+}
+.header__link:hover,
+.header__link:focus {
+  background: rgba(103, 80, 164, 0.08);
+  color: var(--brand-red);
+  outline: 2px solid var(--brand-red); /* Acessibilidade WCAG */
+}
+/* Desktop Layout */
+@media (min-width: 905px) {
+  .header__toggle {
+    display: none;
+  }
+  .header__menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+    gap: 16px;
+
+
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+}
+main {
+  margin-top: var(--h)!important;
+  padding-top: var(--space-12)!important;
 }
