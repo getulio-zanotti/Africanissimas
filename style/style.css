@@ -234,6 +234,54 @@ a:hover { text-decoration: underline; font-weight: 600; }
     transition: none;
   }
 }
+/*footer*/
+.footer {
+  background-color: var(--brand-brown);
+  color: white;
+}
+.footer__container {
+    padding: 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  margin-bottom: 2em;
+}
+.footer__brand {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer__logo {
+  font-family: var(--title-font);
+  color: white;
+  text-decoration: none;
+  font-size: var(--fs-h2);
+}
+.footer__title {
+  color: white;
+}
+.footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.copyright {
+    display: flex;
+    justify-content: center;
+  border-top: 1px solid white;
+  padding: 1.5em 0 1em;
+  color: white;
+  text-align: center;
+}
+.copyright p{
+    margin: 0;
+}
+/*Corpo da página*/
 main {
   margin-top: var(--h)!important;
   padding-top: var(--space-12)!important;
