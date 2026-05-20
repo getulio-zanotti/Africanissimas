@@ -18,8 +18,7 @@
     --bg-surface: #f8f9fa;
     --text-main:  #121212;
     --border:     #e1e4e8;
-    --current-title: var(--brand-yellow);
-    --scroll: var(--current-title, var(--brand-brown));
+    --theme-accent: var(--current-title, var(--brand-red));
     /* --- 2. ESCALA DE ESPAÇAMENTO (Base 8px) --- */
     --space-4:  0.25rem;
     --space-8:  0.5rem;
@@ -82,7 +81,7 @@
 html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: var(--scroll) var(--bg-page);
+    scrollbar-color: var(--theme-accent) var(--bg-page);
 }
 body {
     font-family: var(--main-font);
@@ -285,4 +284,66 @@ a:hover { text-decoration: underline; font-weight: 600; }
 main {
   margin-top: var(--h)!important;
   padding-top: var(--space-12)!important;
+}
+/*efeitos (esqueumorfismo)*/
+.glass {
+  background: rgb(from var(--bg-surface) r g b / 0.15);
+  backdrop-filter: blur(7px) saturate(130%) contrast(120%) brightness(110%);
+  -webkit-backdrop-filter: blur(10px) saturate(200%) contrast(120%) brightness(110%);
+  border: 1px solid rgb(from var(--theme-accent) r g b /  0.25);
+  box-shadow: 0 8px 32px 0 rgb(from var(--theme-accent) r g b / 0.15);
+  border-radius: var(--radius-md);
+}
+.wood {
+  --wood-bg: bisque;
+  --wood-gradient-light: rgba(255, 255, 255, 0.3);
+  --wood-gradient-dark: rgba(0, 0, 0, 0.15);
+  --wood-veins: rgba(0, 0, 0, 0.03);
+  --wood-rings-primary: rgba(40, 20, 5, 0.12);
+  --wood-rings-secondary: rgba(92, 58, 33, 0.05);
+  --wood-border: rgba(54, 31, 14, 0.3);
+  --wood-shadow-inner-light: rgba(255, 255, 255, 0.4);
+  --wood-shadow-inner-dark: rgba(0, 0, 0, 0.15);
+  --wood-shadow-outer: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  background-color: var(--wood-bg);
+  background-image: 
+    linear-gradient(to bottom, var(--wood-gradient-light) 0%, var(--wood-gradient-dark) 100%),  
+    repeating-linear-gradient(85deg, var(--wood-veins) 0px, var(--wood-veins) 2px, transparent 2px, transparent 6px),
+    repeating-radial-gradient(ellipse at 10% 50%, var(--wood-rings-primary) 0px, var(--wood-rings-primary) 3px, var(--wood-rings-secondary) 4px, transparent 6px, transparent 12px);
+  border: 1px solid var(--wood-border);
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 2px 4px var(--wood-shadow-inner-light),
+    inset 0 -5px 15px var(--wood-shadow-inner-dark),
+    var(--wood-shadow-outer);
+}
+@media (prefers-color-scheme: dark) {
+  .wood {
+    --wood-bg: var(--brand-brown);
+    --wood-gradient-light: rgba(255, 255, 255, 0.1);
+    --wood-gradient-dark: rgba(0, 0, 0, 0.4);
+    --wood-veins: rgba(0, 0, 0, 0.05);
+    --wood-rings-primary: rgba(40, 20, 5, 0.4);
+    --wood-rings-secondary: rgba(92, 58, 33, 0.1);
+    --wood-border: #361f0e;
+    --wood-shadow-inner-light: rgba(255, 255, 255, 0.1);
+    --wood-shadow-inner-dark: rgba(0, 0, 0, 0.6);
+    --wood-shadow-outer: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+/*===================Elementos reutilizáveis================*/
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--app-margin);
+  max-width: var(--container-max);
+  justify-content: space-evenly;
+}
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  justify-content: space-evenly;
+  box-shadow: 0 8px 32px 0 rgb(from var(--theme-accent) r g b / 0.15);
 }
