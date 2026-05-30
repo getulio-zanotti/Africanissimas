@@ -1,0 +1,114 @@
+@import url(../style/style.css);
+main {
+  padding: var(--app-margin);
+  min-height: 100vh; /* Fallback para navegadores antigos */
+  min-height: 100dvh; /* A mágica para o Safari Mobile moderno */
+  margin: 0 !important;
+}
+body {
+  background-color: var(--brand-brown);
+  background-image: url("../img/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-color: var(--brand-brown);
+}
+.linktree {
+  width: 100%;
+  max-width: 600px; /* Largura ideal para Link Tree (foco na leitura vertical) */
+  margin: 0 auto;
+  padding: var(--space-32) var(--app-margin) var(--space-64);
+  text-align: center;
+}
+.linktree .glass {
+  color-scheme: dark !important;
+}
+.linktree h1 {
+  font-size: var(--fs-h1);
+  color: #ffffff;
+  margin-bottom: var(--space-8);
+  letter-spacing: 2px;
+}
+.linktree__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16); /* Espaçamento consistente usando os tokens */
+  padding: 0;
+}
+.linktree__item {
+  width: 100%;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--touch-target); /* Garante os 48px mandatórios da WCAG */
+  padding: var(--space-12) var(--space-24);
+
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  font-family: var(--main-font);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+
+  transition:
+    transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.social-link:hover {
+  text-decoration: none; /* Remove o sublinhado para parecer um botão nativo */
+  background-color: var(--brand-brown);
+  color: #ffffff; /* Contraste máximo garantido no hover */
+  border-color: var(--brand-brown);
+  box-shadow: 0 8px 16px rgb(from var(--brand-brown) r g b / 0.2);
+}
+
+/* Efeito ativo ao pressionar (Feedback tátil em telas touch) */
+.social-link:active {
+  transform: scale(0.97);
+}
+
+/* Acessibilidade por Teclado Perfeita (:focus-visible) */
+.social-link:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Ajustes finos para telas maiores)
+   ========================================================================== */
+@media (min-width: 905px) {
+  .linktree {
+    /* Compensação extra do padding de desktop para não colar no header fixo */
+    padding-top: var(--space-48);
+  }
+
+  .linktree__list {
+    gap: var(--space-24); /* Links mais espaçados em telas grandes */
+  }
+
+  .social-link {
+    padding: var(--space-16) var(--space-32); /* Área de clique ainda maior */
+  }
+}
+
+/* Suporte para Dark Mode nativo aproveitando as variáveis globais */
+@media (prefers-color-scheme: dark) {
+  .linktree h1 {
+    color: #ffffff; /* Contraste aprimorado no tema escuro */
+  }
+  .social-link {
+    background-color: var(--bg-surface);
+    border-color: var(--border);
+  }
+}

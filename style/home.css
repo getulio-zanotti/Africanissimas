@@ -3,3 +3,19 @@
 #banner1 {
   background: url(../img/background.jpeg) no-repeat center/cover;
 }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: var(--app-margin);
+  min-height: 90vh;
+  color: #ffffff;
+  text-shadow: 0 0 5px #000000;
+}
+#redes-sociais {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
