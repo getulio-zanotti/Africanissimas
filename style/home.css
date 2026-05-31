@@ -3,6 +3,9 @@
 #banner1 {
   background: url(../img/background.jpeg) no-repeat center/cover;
 }
+h1{
+  color: #ffffff!important;
+}
 main {
   display: flex;
   flex-direction: column;

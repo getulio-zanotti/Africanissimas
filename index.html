@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="style/home.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Africaníssimas</title>
-    <meta name="description" content="Africaníssimas, a tradicional marca de moda, beleza e poder, está de volta com uma nova cara. Uma nova experiência, um novo site, mas a mesma essência que você conhece e ama. Explore nossos serviços, projetos e entre em contato conosco para descobrir como podemos ajudar a se reconectar com sua ancestralidade. Bem-vindo à nova era da Africaníssimas!">
+    <meta name="color-scheme" content="light dark">
+    <title>Africaníssimas | Em Breve Nova Experiência</title>
+    <meta name="description" content="Africaníssimas, a tradicional marca de moda, beleza e poder, está de volta com uma nova cara. Explore nossos serviços, projetos e conecte-se com sua ancestralidade. Nosso novo site está chegando!">
     <meta name="robots" content="index, follow">
-    <link rel="shortcut icon" href="/img/logoA.webp" type="image/x-icon">
+    <link rel="canonical" href="https://africanissimas.com.br/"> <!-- Insira sua URL oficial aqui -->
+    <link rel="shortcut icon" href="/img/fav.webp" type="image/x-icon">
+    <link rel="stylesheet" href="style/home.css">
+
+    <!-- JSON-LD para IA: Identifica a marca mesmo com o site em construção -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Africaníssimas",
+      "url": "https://africanissimas.com.br",
+      "logo": "https://africanissimas.com.br/img/logoA.webp",
+      "description": "Moda, beleza e poder. Conectando você à sua ancestralidade.",
+      "sameAs": [
+        "https://www.instagram.com/africa.nissimas/",
+        "https://www.facebook.com/africanissimas/",
+        "https://www.tiktok.com/@africanissimas"
+      ]
+    }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -17,33 +35,42 @@
 
         <button
           class="header__toggle"
-          id="m-btn" aria-expanded="false"
+          id="m-btn" 
+          aria-expanded="false"
           aria-controls="m-nav"
-          aria-label="Menu"
+          aria-label="Abrir menu"
         >
           <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
         </button>
 
+        <!-- Links temporariamente desativados com estilo/aviso ou apontando para a página de links -->
         <ul class="header__menu" id="m-nav" role="list">
-          <li><a href="#servicos" class="header__link">Serviços</a></li>
-          <li><a href="#projetos" class="header__link">Projetos</a></li>
-          <li><a href="#contato" class="header__link">Contato</a></li>
+          <li><a href="/links" class="header__link">Canais Oficiais</a></li>
+          <li><a href="mailto:africanissimas@gmail.com" class="header__link">Contato Direto</a></li>
         </ul>
       </nav>
     </header>
+    
     <main>
+      <!-- ID adicionado para conectar com a acessibilidade do container -->
       <div class="container card" id="banner1">
-        <p>Bem vindo ao Africaníssimas! Estamos preparando uma nova experiência de Moda, Beleza & Poder. Em quanto isso, siga nossas redes sociais!</p>
+        <!-- OBRIGATÓRIO PARA SEO: Um título principal claro -->
+        <h1>Bem-vinda ao Africaníssimas!</h1> 
+        
+        <p>Estamos preparando uma nova experiência digital para conectar você com a sua ancestralidade. Enquanto o nosso novo site não fica pronto, acompanhe as nossas novidades e projetos diretamente em nossas redes sociais!</p>
+        
+        <!-- Correção dos links vazios: Agora apontam para as URLs reais e usam os atributos de SEO/IA -->
         <div class="glass" id="redes-sociais">
-          <a href="">Instagram</a>
-          <a href="">Facebook</a>
-          <a href="">TikTok</a>
+          <a href="https://www.instagram.com/africa.nissimas/" target="_blank" rel="noopener noreferrer me">Instagram</a>
+          <a href="https://www.facebook.com/africanissimas/" target="_blank" rel="noopener noreferrer me">Facebook</a>
+          <a href="https://www.tiktok.com/@africanissimas" target="_blank" rel="noopener noreferrer me">TikTok</a>
         </div>
       </div>
     </main>
-        <footer class="footer">
+
+    <footer class="footer">
       <div class="footer__container">
         <div class="footer__content">
           <div class="footer__brand">
@@ -51,32 +78,29 @@
             <p class="footer__description">Moda, beleza & poder.</p>
           </div>
 
-          <div class="footer__links">
-            <h3 class="footer__title">Links Rápidos</h3>
+          <nav class="footer__links" aria-label="Links rápidos do rodapé">
+            <h3 class="footer__title">Links Úteis</h3>
             <ul class="footer__list" role="list">
-              <li><a href="#servicos" class="footer__link">Serviços</a></li>
-              <li><a href="#projetos" class="footer__link">Projetos</a></li>
-              <li><a href="#contato" class="footer__link">Contato</a></li>
+              <li><a href="/links" class="footer__link">Nossos Links Oficiais</a></li>
+              <li><a href="mailto:africanissimas@gmail.com" class="footer__link">E-mail para Parcerias</a></li>
             </ul>
-          </div>
+          </nav>
 
-          <div class="footer__links">
+          <nav class="footer__links" aria-label="Redes sociais do rodapé">
             <h3 class="footer__title">Redes Sociais</h3>
             <ul class="footer__list" role="list">
               <li>
-                <a href="#" aria-label="Instagram" class="footer__social-link"
-                  >Instagram</a
-                >
+                <a href="https://www.instagram.com/africa.nissimas/" target="_blank" rel="noopener noreferrer me" class="footer__social-link">Instagram</a>
               </li>
               <li>
-                <a href="#" aria-label="Facebook" class="footer__social-link"
-                  >Facebook</a></li>
+                <a href="https://www.facebook.com/africanissimas/" target="_blank" rel="noopener noreferrer me" class="footer__social-link">Facebook</a>
+              </li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div class="copyright">
-          <p>&copy; Africaníssimas. Todos os direitos reservados.</p>
+          <p>&copy; 2026 Africaníssimas. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
