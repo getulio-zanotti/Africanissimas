@@ -36,3 +36,9 @@ iframe{
     cursor: pointer;
     align-self: center;
 }
+#quote{
+    font-style: italic;
+}
+#gift-details{
+    padding: var(--app-margin);
+}
