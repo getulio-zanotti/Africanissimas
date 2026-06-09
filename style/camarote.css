@@ -1,0 +1,38 @@
+@import url(style.css);
+:root{
+    --theme-accent: var(--brand-blue);
+}
+#invite-card{
+    background-color: var(--bg-page);
+    box-shadow: none;
+    border: none;
+    padding: var(--app-margin);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+#invite-details{
+    padding: var(--app-margin) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+#invite-details p{
+    max-width: 100%;
+}
+iframe{
+    border-radius: var(--radius-md);
+}
+#rsvp{
+    background-color: var(--brand-blue);
+    color: #ffffff;
+    padding: 0.75em 1.5em;
+    border-radius: var(--radius-md);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    align-self: center;
+}
