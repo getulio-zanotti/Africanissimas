@@ -40,5 +40,5 @@ iframe{
     font-style: italic;
 }
 #gift-details{
-    padding: var(--app-margin);
+    padding: var(--app-margin)!important;
 }
